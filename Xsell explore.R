@@ -301,7 +301,7 @@ benefit.track.segs.week <- Xsell %>%
        
   )
 benefit.track.segs.week
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/benefit.segs.week.png", width = 9, height = 5)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/benefit.segs.week.png", width = 9, height = 5)
 
 benefit.track.cat.week <- Xsell %>% 
   filter(dialer.tweak == "tweak") %>% # post 13 march period filter
@@ -329,7 +329,7 @@ benefit.track.cat.week <- Xsell %>%
        
   )
 benefit.track.cat.week
-ggsave(file="H:/R Statistics/Sanoma Data Science/plots/benefit.cats.week.png", width = 9, height = 5)
+ggsave(file="H:/R Statistics/Xsell Data Science/plots/benefit.cats.week.png", width = 9, height = 5)
 
 benefit.track.tot.week <- Xsell %>% 
   filter(dialer.tweak == "tweak") %>% # post 13 march period filter
@@ -349,7 +349,7 @@ benefit.track.tot.week <- Xsell %>%
   geom_bar(stat = 'identity') +
   facet_grid(metric ~ .)
 benefit.track.tot.week
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/benefit.tot.week.png", width = 8, height = 3)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/benefit.tot.week.png", width = 8, height = 3)
 
 # 4.  Visualise -----------------------------------------------------------------
 
@@ -364,7 +364,7 @@ attempts <- Xsell %>%
        title = "Distribution of dials in the trial period"
   )
 attempts  
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/dials.png", width = 8, height = 3)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/dials.png", width = 8, height = 3)
 
 segments <- Xsell %>% 
   filter(dialer.tweak == "tweak") %>% 
@@ -379,7 +379,7 @@ segments <- Xsell %>%
        title = "Segmentation in the dial attempts"
       )
 segments
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/segments.png", width = 8, height = 3)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/segments.png", width = 8, height = 3)
  
 contacts <- Xsell %>% 
   filter(dialer.tweak == "tweak") %>% 
@@ -397,7 +397,7 @@ contacts <- Xsell %>%
        subtitle = "0 = unsuccessful, 1 = successful"
   )
 contacts
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/contacts.png", width = 8, height = 3)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/contacts.png", width = 8, height = 3)
 
 sales <- Xsell %>% 
   filter(is.contact == 1, 
@@ -418,7 +418,7 @@ sales <- Xsell %>%
     
   )
 sales
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/sales.png", width = 8, height = 3)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/sales.png", width = 8, height = 3)
 
 sales.tweak <- Xsell %>% 
   filter(is.sale == 1) %>% 
@@ -437,7 +437,7 @@ sales.tweak <- Xsell %>%
        
   )
 sales.tweak
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/sales.tweak.png", width = 8, height = 3)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/sales.tweak.png", width = 8, height = 3)
   
 hour.attempt <- Xsell %>% 
   filter(dialer.tweak == "tweak") %>% 
@@ -462,7 +462,7 @@ hour.attempt <- Xsell %>%
        
   )
 hour.attempt
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/hour.attempts.png", width = 6, height = 6)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/hour.attempts.png", width = 6, height = 6)
 
 hour.attempt.tab <- Xsell %>% 
   filter(dialer.tweak == "tweak") %>% 
@@ -522,7 +522,7 @@ attempt.dist <- Xsell %>%
   theme(legend.position="none") # remove legend
 
 attempt.dist
-ggsave(file="H:/R Statistics/Sanoma Data Science/plots/attempt.distribution.png", width = 9, height = 5)
+ggsave(file="H:/R Statistics/Xsell Data Science/plots/attempt.distribution.png", width = 9, height = 5)
 
 # visualise attempts vs. contact and sales rates per segement
 # filtered the data for period after 13th march and attempts less than 16
@@ -552,7 +552,7 @@ attempt.viz.perc <- Xsell %>%
   theme(legend.position="none") # remove legend
 
 attempt.viz.perc
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/attempt.segs.relative.png", width = 9, height = 5)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/attempt.segs.relative.png", width = 9, height = 5)
 
 
 # visualise attempts vs. absolute numbers of contact and sales per segement
@@ -583,7 +583,7 @@ attempt.viz.abs <- Xsell %>%
   theme(legend.position="none") # remove legend
 
 attempt.viz.abs
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/attempt.segs.absolute.png", width = 9, height = 5)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/attempt.segs.absolute.png", width = 9, height = 5)
 
 
 # 7.  Result analyses (Finishcodes) -------------------------------------------
@@ -614,7 +614,7 @@ result.dist <- Xsell %>%
   theme(legend.position = "none") + # remove legend
   theme(axis.text.x = element_text(angle = 90))
 result.dist
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/attempt.dist.contact0.png", width = 10, height = 4)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/attempt.dist.contact0.png", width = 10, height = 4)
 
 # Distribution of results where is.contact == 1
 result.dist.is.contact <- Xsell %>% 
@@ -642,7 +642,7 @@ result.dist.is.contact <- Xsell %>%
   theme(legend.position = "none") + # remove legend
   theme(axis.text.x = element_text(angle = 90))
 result.dist.is.contact
-#ggsave(file="H:/R Statistics/Sanoma Data Science/plots/attempt.dist.contact1.png", width = 10, height = 4)
+#ggsave(file="H:/R Statistics/Xsell Data Science/plots/attempt.dist.contact1.png", width = 10, height = 4)
 
 # find finish codes and their frequency in the data set
 finish.codes <- Xsell %>%
