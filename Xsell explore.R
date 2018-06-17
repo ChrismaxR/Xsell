@@ -12,13 +12,13 @@ library('lubridate')
 library('dataMeta') # to build data dictionary
 library('xlsx') 
 
-setwd("H:/R Statistics/Sanoma Data Science") # This is my local dir where I put my work for the time being
+setwd("H:/R Statistics/Xsell") # This is my local dir where I put my work for the time being
 theme_set(theme_light())
 
 # 2.  Get data ----------------------------------------------------------------
 
 # Query database (HAMSTER) for data
-source("S:/Business Intelligence/Afdeling/Analyse/Walters generieke R scripts/queryHAMSTER v02.R")
+source("~/queryHAMSTER v02.R")
 Xsell <- queryHAMSTER(str_replace_all(readLines("Xsell dump results v2.sql"), "[\r\n]" , ""))
 
 Xsell <- Xsell %>% 
